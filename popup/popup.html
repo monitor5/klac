@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KLAP</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">KLAP</div>
+    <select id="term" aria-label="학기 선택"></select>
+    <button id="refresh" class="icon" title="새로고침" aria-label="새로고침">↻</button>
+    <button id="expand" class="icon" title="새 탭에서 열기" aria-label="새 탭에서 열기">⤢</button>
+  </header>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="due" aria-selected="true">마감</button>
+    <button role="tab" data-tab="courses">과목</button>
+    <button role="tab" data-tab="assignments">과제</button>
+    <button role="tab" data-tab="notices">공지</button>
+    <button role="tab" data-tab="lectures">강의</button>
+    <button role="tab" data-tab="timetable">시간표</button>
+  </nav>
+  <div id="filters" class="filters" hidden>
+    <select id="course-filter" aria-label="과목 필터"><option value="">전체 과목</option></select>
+    <label class="check"><input type="checkbox" id="pending-only" checked> <span id="pending-label">미완료만</span></label>
+  </div>
+  <div id="banner" class="banner" hidden></div>
+  <main id="view" aria-live="polite"></main>
+  <section id="detail" class="detail" hidden>
+    <header><button id="back" class="icon" aria-label="뒤로">←</button><h2 id="detail-title"></h2></header>
+    <div id="detail-meta" class="meta"></div>
+    <div id="detail-body" class="body"></div>
+    <footer><button id="detail-open" class="primary">KLAS에서 열기</button></footer>
+  </section>
+  <footer class="status"><span id="status">불러오는 중…</span><a href="#" id="settings-link">설정</a></footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
