@@ -65,6 +65,9 @@ KLAS에서 마감을 확인하려면 과목마다 강의실에 들어가 과제,
 > Chrome 웹 스토어에는 아직 올리지 않았습니다. 개발자 모드로 설치합니다.
 
 1. 이 레포를 clone하거나 Releases에서 zip을 받아 압축을 풉니다.
+   ```sh
+   git clone https://github.com/monitor5/klac.git
+   ```
 2. Chrome에서 `chrome://extensions`를 열고 오른쪽 위 **개발자 모드**를 켭니다.
 3. **압축해제된 확장 프로그램을 로드합니다**를 누르고 `manifest.json`이 있는 폴더를 선택합니다.
 4. [KLAS](https://klas.kw.ac.kr)에 로그인한 뒤 툴바의 **K** 아이콘을 누릅니다. 📌 고정해 두면 편합니다.
