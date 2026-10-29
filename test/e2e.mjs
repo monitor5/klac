@@ -53,6 +53,7 @@ const context = await chromium.launchPersistentContext('', {
     '--no-proxy-server',
   ],
   viewport: { width: 420, height: 600 },
+  deviceScaleFactor: 2,
 });
 const failures = [];
 const check = (cond, message) => { if (!cond) failures.push(message); console.log(`${cond ? 'ok  ' : 'FAIL'} ${message}`); };
