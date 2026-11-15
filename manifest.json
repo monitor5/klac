@@ -1,37 +1,72 @@
 {
   "manifest_version": 3,
-  "name": "KLAP - 광운대 KLAS 수강 관리",
-  "short_name": "KLAP",
-  "version": "0.2.0",
-  "description": "KLAS 과제·공지·온라인 강의 마감을 한눈에 보고, 마감 알림과 강의 뷰어 자동 진도 갱신을 제공합니다.",
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "version": "0.2.1",
+  "default_locale": "ko",
+  "description": "__MSG_extDescription__",
+  "homepage_url": "https://github.com/monitor5/klac",
   "minimum_chrome_version": "116",
-  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
     "default_title": "KLAP",
     "default_popup": "popup/popup.html",
-    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
   },
-  "permissions": ["storage", "alarms", "notifications", "declarativeNetRequestWithHostAccess"],
-  "host_permissions": ["https://klas.kw.ac.kr/*"],
-  "background": { "service_worker": "src/background.js", "type": "module" },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "https://klas.kw.ac.kr/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
   "content_scripts": [
     {
-      "matches": ["https://klas.kw.ac.kr/std/lis/evltn/OnlineCntntsStdPage.do*"],
-      "js": ["viewer/capture-main.js"],
+      "matches": [
+        "https://klas.kw.ac.kr/std/lis/evltn/OnlineCntntsStdPage.do*"
+      ],
+      "js": [
+        "viewer/capture-main.js"
+      ],
       "world": "MAIN",
       "all_frames": true,
       "run_at": "document_start"
     },
     {
-      "matches": ["https://klas.kw.ac.kr/std/lis/evltn/OnlineCntntsStdPage.do*"],
-      "js": ["viewer/capture.js"],
+      "matches": [
+        "https://klas.kw.ac.kr/std/lis/evltn/OnlineCntntsStdPage.do*"
+      ],
+      "js": [
+        "viewer/capture.js"
+      ],
       "all_frames": true,
       "run_at": "document_start"
     },
     {
-      "matches": ["https://klas.kw.ac.kr/spv/lis/lctre/viewer/LctreCntntsViewSpvPage.do*"],
-      "js": ["viewer/core.js", "viewer/viewer.js"],
-      "css": ["viewer/viewer.css"],
+      "matches": [
+        "https://klas.kw.ac.kr/spv/lis/lctre/viewer/LctreCntntsViewSpvPage.do*"
+      ],
+      "js": [
+        "viewer/core.js",
+        "viewer/viewer.js"
+      ],
+      "css": [
+        "viewer/viewer.css"
+      ],
       "all_frames": true,
       "run_at": "document_idle"
     }
