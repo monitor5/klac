@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "KLAP - KLAS Course Helper (Unofficial)"
+  },
+  "extShortName": {
+    "message": "KLAP"
+  },
+  "extDescription": {
+    "message": "KLAS assignment, notice and lecture deadlines in one popup, with alerts. Unofficial; not affiliated with Kwangwoon University."
+  }
+}
